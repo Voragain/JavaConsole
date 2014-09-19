@@ -32,6 +32,10 @@ public class ConsoleOut {
 
 	private class ConsoleCanvas extends Canvas
 	{
+
+		private static final long serialVersionUID = 1L;
+		
+		
 		private BufferedImage mBackBuffer;
 		
 		private ConsoleCanvas()
@@ -185,7 +189,6 @@ public class ConsoleOut {
 	private static Font mFonts[] = null;
 	private static Dimension mElementDimension;
 	
-	private Dimension mConsoleDimension;
 	private ConsoleElement mElements[][];
 	private Dimension mElementCount;
 	private Point mElementCursorPosition;
@@ -201,15 +204,11 @@ public class ConsoleOut {
 	private Timer mCaretTimer;
 	private TimerTask mCaretTimerT;
 	
-	
-	private JavaConsole mOwner;
-	private Frame mFrame;
+		private Frame mFrame;
 	private ConsoleCanvas mCanvas;
 	
-
 	public ConsoleOut(JavaConsole console)
 	{
-		mOwner = console;
 		if(mFonts == null)
 		{
 			mFonts = new Font[4];
